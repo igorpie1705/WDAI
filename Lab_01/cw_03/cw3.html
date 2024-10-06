@@ -3,9 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ćwiczenie 2</title>
+    <title>Kolorowe kwadraty :D</title>
   </head>
+  <style>
+    .kwadrat {
+      width: 100px;
+      height: 100px;
+    }
+    .grid-top {
+      display: grid;
+      grid-template-columns: 100px 100px;
+      gap: 10px 10px;
+      margin-bottom: 10px;
+    }
+    .grid-bottom {
+      display: grid;
+      grid-template-columns: 100px 100px 100px;
+      gap: 10px 10px;
+    }
+    img {
+      width: 100px;
+      height: 100px;
+    }
+  </style>
   <body>
-    <h1>Hello world!</h1>
+    <div class="grid-top">
+      <div class="kwadrat" style="background-color: rgb(225, 225, 26)"></div>
+      <div class="kwadrat" style="background-color: blue"></div>
+    </div>
+    <div class="grid-bottom">
+      <div class="kwadrat" style="background-color: rgb(0, 251, 255)"></div>
+      <div class="kwadrat" style="background-color: rgb(228, 10, 10)"></div>
+      <img src="Ideas_Surprised_Pikachu_HD.webp" />
+    </div>
   </body>
 </html>
