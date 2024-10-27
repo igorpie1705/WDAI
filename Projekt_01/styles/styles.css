@@ -121,3 +121,7 @@
 .advertisement-button:active {
   color: #4d2c1d;
 }
+
+.button-link {
+  height: 50px;
+}

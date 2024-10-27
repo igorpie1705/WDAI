@@ -90,6 +90,7 @@
   border-width: 0;
   transition: background-color 0.15s, color 0.15s;
   cursor: pointer;
+  position: relative;
 }
 
 .link-button:hover {
@@ -106,4 +107,108 @@
   margin: 0 10px 0 10px;
   color: #f2f2f2;
   font-size: 17px;
+}
+
+.link-button .tooltip {
+  position: absolute;
+  background-color: #ab886d;
+  color: white;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 5px;
+  font-size: 12px;
+  bottom: -30px;
+  left: -20px;
+  opacity: 0;
+  transition: opacity 0.4s 0.4s;
+  pointer-events: none;
+  text-wrap: nowrap;
+}
+
+.link-button:hover .tooltip {
+  opacity: 1;
+}
+
+@media (max-width: 600px) {
+  .header {
+    height: auto;
+    flex-direction: column;
+    padding: 10px 0;
+  }
+
+  .left-section,
+  .right-section {
+    width: 100%;
+    padding: 10px;
+    justify-content: center;
+  }
+
+  .middle-section {
+    margin: 0;
+    min-width: auto;
+    width: 100%;
+  }
+
+  .title {
+    font-size: 40px;
+    margin: 5px 0;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar p {
+    font-size: 15px;
+    margin: 5px 0;
+  }
+
+  .link-button {
+    width: 80%;
+    margin-top: 10px;
+  }
+}
+
+/* Medium Screens (601px to 1000px) */
+@media (min-width: 601px) and (max-width: 1000px) {
+  .header {
+    height: 70px;
+  }
+
+  .left-section,
+  .right-section {
+    width: 150px;
+    padding: 0 10px;
+  }
+
+  .middle-section {
+    margin-left: 10px;
+    flex: 3;
+  }
+
+  .title {
+    font-size: 50px;
+  }
+
+  .navbar p {
+    font-size: 16px;
+  }
+}
+
+/* Large Screens (1001px and up) */
+@media (min-width: 1001px) {
+  .header {
+    height: 80px;
+  }
+
+  .title {
+    font-size: 60px;
+  }
+
+  .navbar p {
+    font-size: 18px;
+  }
 }
