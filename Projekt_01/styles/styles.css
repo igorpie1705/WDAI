@@ -1,40 +1,123 @@
-.text-container {
-  display: flex;
-  flex-direction: column;
-  padding-top: 50px;
-}
 .footer {
   bottom: 0;
   width: 100%;
   position: fixed;
   text-align: center;
-  color: #f2f2f2;
-  background-color: #333;
+  color: #4d2c1d;
+  background-color: #ffb38e;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #4f4e4e;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-icon {
+  height: 30px;
+}
+
+.text-container {
+  margin-top: 50px;
+  background-color: #ffb26f;
+  padding-left: 50px;
+  display: flex;
+  flex-direction: row;
+}
+
+.home-main-img {
+  margin-left: 100px;
+  border-radius: 50px;
+  align-items: center;
+  width: 500px;
+  height: 100%;
+}
+
+.home-main-text {
+  color: #4d2c1d;
+  width: 700px;
+}
+
+.home-main-title {
+  color: #4d2c1d;
+  font-size: 40px;
+  font-weight: 500;
 }
 
 .main {
-  margin-top: 70px;
-  margin-bottom: 20px;
-  margin-left: 24px;
-  margin-right: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.image-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-column-gap: 15px;
-  grid-row-gap: 15px;
+.advertisement-title {
+  margin-top: 30px;
+  font-size: 40px;
+  background-color: #de8f5f;
+  border-radius: 80px;
+  padding: 20px;
+  color: #fff;
 }
 
-.image {
+.advertisement {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.advertisement-panes {
+  margin: 10px 100px 20px 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 40px;
+}
+
+.advertisement-panel {
+  flex: 0 1 300px;
+  background-color: #ffb26f;
+
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.15);
+  height: 300px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  padding: 20px;
+  margin: 10px;
+}
+
+.advertisement-panel-text {
+  color: #4e342e;
   width: 100%;
+  text-align: center;
 }
 
-.image-title {
-  text-align: center;
-  font-weight: 700;
+.advertisement-button {
+  font-size: 20px;
+  height: 50px;
+  border-radius: 50px;
+  color: #4d2c1d;
+  background-color: #ffb38e;
+  border-width: 0;
+  transition: background-color 0.15s, color 0.15s;
+  margin-bottom: 40px;
+  padding: 0 30px;
+  cursor: pointer;
 }
 
-.image-text {
-  text-align: center;
+.advertisement-button:hover {
+  color: #4d2c1d;
+  background-color: #ffcf9d;
+}
+
+.advertisement-button:active {
+  color: #4d2c1d;
 }
