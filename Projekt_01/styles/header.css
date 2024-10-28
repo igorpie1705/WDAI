@@ -3,9 +3,12 @@
   src: url(/WDAI/Projekt_01/fonts/MeowPaw-51Arz.ttf);
 }
 
+@font-face {
+  font-family: clockFont;
+  src: url(/WDAI/Projekt_01/fonts/OrientalCatsLight-2OzB8.otf);
+}
+
 .header {
-  text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
-    -1px -1px 0 #000;
   background-color: #ffb38e;
   margin: 0;
   display: flex;
@@ -23,27 +26,53 @@
 }
 
 .middle-section {
-  margin-left: 130px;
-  flex: 4;
+  text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
+    -1px -1px 0 #000;
+  flex: 1;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   min-width: 200px;
-  position: static;
-  right: 0;
 }
 
 .left-section {
-  padding-left: 24px;
-  height: 100%;
-  width: 200px;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
+  padding-right: 20px;
+  height: 100%;
 }
 
-.left-section-button {
-  flex: 1;
+.left-section .clock-container {
+  display: flex;
+  background-color: #de8f5f;
+  border-radius: 40px;
+  padding: 10px 20px;
+  align-items: center;
+  margin-left: 24px;
+}
+
+.left-section .clock {
+  font-family: clockFont, Roboto, Arial;
+  font-size: 2.2em;
+  color: #f2f2f2;
+  letter-spacing: 1.5px;
+  display: flex;
+  align-items: center;
+  width: 200px;
+  justify-content: flex-end;
+}
+
+.left-section .clock span {
+  padding: 0 6px;
+}
+
+.left-section .clock span#hrs,
+.left-section .clock span#min,
+.left-section .clock span#sec {
+  min-width: 35px;
+  text-align: center;
 }
 
 .right-section {
@@ -151,11 +180,6 @@
     width: 100%;
   }
 
-  .title {
-    font-size: 40px;
-    margin: 5px 0;
-  }
-
   .navbar {
     flex-direction: column;
     align-items: center;
@@ -189,10 +213,6 @@
     flex: 3;
   }
 
-  .title {
-    font-size: 50px;
-  }
-
   .navbar p {
     font-size: 16px;
   }
@@ -202,10 +222,6 @@
 @media (min-width: 1001px) {
   .header {
     height: 80px;
-  }
-
-  .title {
-    font-size: 60px;
   }
 
   .navbar p {

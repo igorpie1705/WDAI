@@ -8,10 +8,21 @@
     <link rel="stylesheet" href="/WDAI/Projekt_01/styles/general.css" />
     <link rel="stylesheet" href="/WDAI/Projekt_01/styles/styles.css" />
     <link rel="stylesheet" href="/WDAI/Projekt_01/styles/gallery.css" />
+    <script defer src="/WDAI/Projekt_01/javascript/clock.js"></script>
   </head>
   <body>
     <header class="header">
-      <div class="left-section"></div>
+      <div class="left-section">
+        <div class="clock-container">
+          <div class="clock">
+            <span id="hrs">00</span>
+            <span>:</span>
+            <span id="min">00</span>
+            <span>:</span>
+            <span id="sec">00</span>
+          </div>
+        </div>
+      </div>
       <div class="middle-section">
         <p class="title">Kocie Brzuszki</p>
       </div>
@@ -24,13 +35,13 @@
             </button>
           </a>
           <a href="galeria.html">
-            <button class="link-button highlighted">
+            <button class="link-button">
               <p>Nasze przysmaki</p>
               <div class="tooltip">Nasze produkty</div>
             </button>
           </a>
           <a href="kontakt.html">
-            <button class="link-button highlighted">
+            <button class="link-button">
               <p>Kontakt</p>
               <div class="tooltip">Skontaktuj się z nami</div>
             </button>
