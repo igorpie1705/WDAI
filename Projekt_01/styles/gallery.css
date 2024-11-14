@@ -144,7 +144,7 @@
   .label-text {
     margin-left: 9.557vh;
     width: 13.021vh;
-    border-radius: 0.326vh;
+    border-radius: 3vh;
   }
   .image-title {
     padding: 0.326vw;
@@ -171,9 +171,9 @@
   }
 
   .label-text {
-    margin-left: 9.557vh;
+    margin-left: 13.557vh;
     width: 13.021vh;
-    border-radius: 0.326vh;
+    border-radius: 4vh;
   }
   .image-title {
     padding: 0.326vw;
