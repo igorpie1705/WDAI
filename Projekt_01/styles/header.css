@@ -8,6 +8,10 @@
   src: url(/WDAI/Projekt_01/fonts/OrientalCatsLight-2OzB8.otf);
 }
 
+.clock-container {
+  font-size: 1.042vw;
+}
+
 .header {
   background-color: #ffb38e;
   margin: 0;
@@ -15,75 +19,78 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  height: 60px;
+  height: 3.906vw;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   border-style: solid;
-  border-width: 1px;
+  border-width: 0.065vw;
   border-color: #4f4e4e;
 }
 
 .middle-section {
-  text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
-    -1px -1px 0 #000;
+  text-shadow: -0.065vw 0.065vw 0 #000, 0.065vw 0.065vw 0 #000,
+    0.065vw -0.065vw 0 #000, -0.065vw -0.065vw 0 #000;
   flex: 1;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-width: 200px;
+  min-width: 13.021vw;
 }
 
 .left-section {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding-right: 20px;
+  padding-right: 6.6vw;
   height: 100%;
 }
 
 .left-section .clock-container {
   display: flex;
   background-color: #de8f5f;
-  border-radius: 40px;
-  padding: 10px 20px;
+  border-radius: 2.604vw;
+  padding: 0.651vw 1.302vw;
   align-items: center;
-  margin-left: 24px;
+  margin-left: 1.563vw;
 }
 
 .left-section .clock {
   font-family: clockFont, Roboto, Arial;
   font-size: 2.2em;
   color: #f2f2f2;
-  letter-spacing: 1.5px;
+  letter-spacing: 0.098vw;
   display: flex;
   align-items: center;
-  width: 200px;
+  width: 13.021vw;
   justify-content: flex-end;
 }
 
 .left-section .clock span {
-  padding: 0 6px;
+  padding: 0 0.391vw;
 }
 
 .left-section .clock span#hrs,
 .left-section .clock span#min,
 .left-section .clock span#sec {
-  min-width: 35px;
+  min-width: 2.279vw;
   text-align: center;
 }
 
 .right-section {
   height: 100%;
-  width: 320px;
+  width: 20.833vw;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
-  padding-right: 24px;
+  padding-right: 1.563vw;
+}
+
+.button-icon {
+  height: 1.953vw;
 }
 
 .navbar {
@@ -93,14 +100,15 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: nowrap;
 }
 
 .navbar p {
   flex: 1;
   text-align: center;
   text-decoration: none;
-  margin: 0 10px 0 10px;
-  font-size: 17px;
+  margin: 0 0.651vw 0 0.651vw;
+  font-size: 1.107vw;
 }
 
 .title {
@@ -108,12 +116,13 @@
   text-align: center;
   color: #f2f2f2;
   font-family: MyFirstFont;
-  font-size: 60px;
+  font-size: 3.906vw;
 }
 
 .link-button {
-  height: 40px;
-  border-radius: 50px;
+  height: 2.604vw;
+  width: 100%;
+  border-radius: 3.255vw;
   color: #f2f2f2;
   background-color: #de8f5f;
   border-width: 0;
@@ -123,8 +132,8 @@
 }
 
 .link-button:hover {
-  height: 40px;
-  border-radius: 50px;
+  height: 2.604vw;
+  border-radius: 3.255vw;
   color: black;
   background-color: #ffcf9d;
 }
@@ -133,23 +142,23 @@
   flex: 1;
   text-align: center;
   text-decoration: none;
-  margin: 0 10px 0 10px;
+  margin: 0 0.651vw 0 0.651vw;
   color: #f2f2f2;
-  font-size: 17px;
+  font-size: 1.107vw;
 }
 
 .link-button .tooltip {
   position: absolute;
   background-color: #ab886d;
   color: white;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 8px;
-  padding-right: 8px;
-  border-radius: 5px;
-  font-size: 12px;
-  bottom: -30px;
-  left: -20px;
+  padding-top: 0.26vw;
+  padding-bottom: 0.26vw;
+  padding-left: 0.521vw;
+  padding-right: 0.521vw;
+  border-radius: 0.326vw;
+  font-size: 0.781vw;
+  bottom: -1.953vw;
+  left: -1.302vw;
   opacity: 0;
   transition: opacity 0.4s 0.4s;
   pointer-events: none;
@@ -160,71 +169,31 @@
   opacity: 1;
 }
 
-@media (max-width: 600px) {
-  .header {
-    height: auto;
-    flex-direction: column;
-    padding: 10px 0;
-  }
-
-  .left-section,
-  .right-section {
-    width: 100%;
-    padding: 10px;
-    justify-content: center;
-  }
-
-  .middle-section {
-    margin: 0;
-    min-width: auto;
-    width: 100%;
-  }
-
-  .navbar {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .navbar p {
-    font-size: 15px;
-    margin: 5px 0;
-  }
-
-  .link-button {
-    width: 80%;
-    margin-top: 10px;
-  }
+.footer {
+  font-size: 1.042vw;
+  bottom: 0;
+  width: 100%;
+  position: fixed;
+  text-align: center;
+  color: #4d2c1d;
+  background-color: #ffb38e;
+  border-style: solid;
+  border-width: 0.065vw;
+  border-color: #4f4e4e;
 }
 
-/* Medium Screens (601px to 1000px) */
-@media (min-width: 601px) and (max-width: 1000px) {
-  .header {
-    height: 70px;
-  }
+/* Media Queries for Header Responsiveness */
 
-  .left-section,
-  .right-section {
-    width: 150px;
-    padding: 0 10px;
-  }
-
-  .middle-section {
-    margin-left: 10px;
-    flex: 3;
-  }
-
-  .navbar p {
-    font-size: 16px;
-  }
+/* Medium screens (Tablets, small desktops) */
+@media (max-width: 1024px) {
 }
 
-/* Large Screens (1001px and up) */
-@media (min-width: 1001px) {
-  .header {
-    height: 80px;
-  }
+/* Small screens (Large phones, small tablets) */
+@media (max-width: 768px) {
+}
 
-  .navbar p {
-    font-size: 18px;
+@media (max-width: 480px) {
+  .footer {
+    font-size: 3vh;
   }
 }

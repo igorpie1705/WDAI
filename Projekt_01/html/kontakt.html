@@ -50,12 +50,13 @@
         </nav>
       </div>
     </header>
-    <section class="layout">
+    <section class="container">
       <div class="contact-form">
-        <h2>Skontaktuj się z nami!</h2>
-        <form id="form" action="#" method="post">
+        <p class="form-title">Skontaktuj się z nami!</p>
+        <form class="form" id="form" action="#" method="post">
           <label for="email">Adres e-mail:</label>
           <input
+            class="text-placeholder"
             type="text"
             id="email"
             name="email"
@@ -63,15 +64,18 @@
             required
           />
           <div class="error-email" id="error" style="display: none"></div>
-          <label for="subject">Temat wiadomości:</label>
-          <select id="subject" name="subject" required>
-            <option value="">Wybierz temat</option>
-            <option value="wsparcie">Wsparcie</option>
-            <option value="sprzedaż">Sprzedaż</option>
-            <option value="ogólne">Ogólne zapytanie</option>
-          </select>
+          <div class="second-box">
+            <label for="subject">Temat wiadomości:</label>
+            <select class="options" id="subject" name="subject" required>
+              <option value="">Wybierz temat</option>
+              <option value="wsparcie">Wsparcie</option>
+              <option value="sprzedaż">Sprzedaż</option>
+              <option value="ogólne">Ogólne zapytanie</option>
+            </select>
+          </div>
           <label for="message">Wiadomość:</label>
           <textarea
+            class="text-placeholder"
             id="message"
             name="message"
             placeholder="Wprowadź swoją wiadomość"
