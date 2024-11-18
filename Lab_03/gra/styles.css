@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#canvas {
+  width: 800px;
+  height: 500px;
+  border: 4px solid black;
+}
+
+#gameOverPopup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 50px;
+  font-family: Chiller;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: rgb(255, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  text-align: center;
+}
+
+#restartButton {
+  background: #3a3a3a;
+  font-family: Chiller;
+  color: white;
+  border: none;
+  font-size: 40px;
+  padding: 5px 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#restartButton:hover {
+  background: #888888;
+}
