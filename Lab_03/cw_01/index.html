@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stoper</title>
+  </head>
+  <body style="text-align: center">
+    <h2>Stoper</h2>
+    <div id="stopwatch">0s</div>
+    <button onclick="startStopwatch()">Start</button>
+    <button onclick="stopStopwatch()">Stop</button>
+    <button onclick="resetStopwatch()">Reset</button>
+
+    <script>
+      var startTime;
+      var stopwatchInterval;
+      var elapsedPausedTime = 0;
+
+      function startStopwatch() {
+        if (!stopwatchInterval) {
+          startTime = new Date().getTime() - elapsedPausedTime;
+          stopwatchInterval = setInterval(updateStopwatch, 1000);
+        }
+      }
+
+      function stopStopwatch() {
+        clearInterval(stopwatchInterval);
+        elapsedPausedTime = new Date().getTime() - startTime;
+        stopwatchInterval = null;
+      }
+
+      function resetStopwatch() {
+        stopStopwatch();
+        elapsedPausedTime = 0;
+        document.getElementById("stopwatch").innerHTML = "0s";
+      }
+
+      function updateStopwatch() {
+        var currentTime = new Date().getTime();
+        var elapsedTime = currentTime - startTime;
+        var seconds = Math.floor(elapsedTime / 1000) % 60;
+        var minutes = Math.floor(elapsedTime / 1000 / 60) % 60;
+        var hours = Math.floor(elapsedTime / 1000 / 60 / 60);
+        var displayTime = padHrs(hours) + padMins(minutes) + seconds + "s";
+        document.getElementById("stopwatch").innerHTML = displayTime;
+      }
+
+      function padHrs(number) {
+        return number != 0 ? number + "hrs " : "";
+      }
+
+      function padMins(number) {
+        return number != 0 ? number + "min " : "";
+      }
+    </script>
+  </body>
+</html>

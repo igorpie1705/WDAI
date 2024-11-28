@@ -3,62 +3,100 @@
   src: url(/WDAI/Projekt_01/fonts/MeowPaw-51Arz.ttf);
 }
 
+@font-face {
+  font-family: clockFont;
+  src: url(/WDAI/Projekt_01/fonts/OrientalCatsLight-2OzB8.otf);
+}
+
 .header {
-  text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
-    -1px -1px 0 #000;
   background-color: #ffb38e;
   margin: 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  height: 60px;
+  height: 3.906vw;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   border-style: solid;
-  border-width: 1px;
+  border-width: 0.065vw;
   border-color: #4f4e4e;
 }
 
-.middle-section {
-  margin-left: 130px;
-  flex: 4;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-width: 200px;
-  position: static;
-  right: 0;
-}
-
 .left-section {
-  padding-left: 24px;
-  height: 100%;
-  width: 200px;
   display: flex;
   align-items: center;
+  padding-right: 6.6vw;
 }
 
-.left-section-button {
+.clock-container {
+  font-size: 1.042vw;
+}
+
+.left-section .clock-container {
+  display: flex;
+  background-color: #de8f5f;
+  border-radius: 2.604vw;
+  padding: 0.651vw 1.302vw;
+  align-items: center;
+  margin-left: 1.563vw;
+}
+
+.left-section .clock {
+  font-family: clockFont, Roboto, Arial;
+  font-size: 2.2em;
+  color: #f2f2f2;
+  letter-spacing: 0.098vw;
+  display: flex;
+  align-items: center;
+  width: 13.021vw;
+  justify-content: flex-end;
+}
+
+.left-section .clock span {
+  padding: 0 0.391vw;
+}
+
+.left-section .clock span#hrs,
+.left-section .clock span#min,
+.left-section .clock span#sec {
+  min-width: 2.279vw;
+  text-align: center;
+}
+
+.middle-section {
+  text-shadow: -0.065vw 0.065vw 0 #000, 0.065vw 0.065vw 0 #000,
+    0.065vw -0.065vw 0 #000, -0.065vw -0.065vw 0 #000;
   flex: 1;
+  min-width: 13.021vw;
+}
+
+.title {
+  flex: 1;
+  text-align: center;
+  color: #f2f2f2;
+  font-family: MyFirstFont;
+  font-size: 3.906vw;
 }
 
 .right-section {
   height: 100%;
-  width: 320px;
+  max-width: 20.833vw;
+  flex: 1;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
-  padding-right: 24px;
+  padding-right: 1.563vw;
+}
+
+.button-icon {
+  height: 1.953vw;
 }
 
 .navbar {
-  height: 100%;
   flex: 1;
   display: flex;
   flex-direction: row;
@@ -70,40 +108,271 @@
   flex: 1;
   text-align: center;
   text-decoration: none;
-  margin: 0 10px 0 10px;
-  font-size: 17px;
-}
-
-.title {
-  flex: 1;
-  text-align: center;
-  color: #f2f2f2;
-  font-family: MyFirstFont;
-  font-size: 60px;
+  margin: 0 0.651vw 0 0.651vw;
+  font-size: 1.107vw;
 }
 
 .link-button {
-  height: 40px;
-  border-radius: 50px;
+  height: 2.604vw;
+  width: 100%;
+  border-radius: 3.255vw;
   color: #f2f2f2;
   background-color: #de8f5f;
   border-width: 0;
   transition: background-color 0.15s, color 0.15s;
   cursor: pointer;
+  position: relative;
 }
 
 .link-button:hover {
-  height: 40px;
-  border-radius: 50px;
+  height: 2.604vw;
+  border-radius: 3.255vw;
   color: black;
   background-color: #ffcf9d;
 }
 
-.left-button-text {
-  flex: 1;
+.link-button .tooltip {
+  position: absolute;
+  background-color: #ab886d;
+  color: white;
+  padding-top: 0.26vw;
+  padding-bottom: 0.26vw;
+  padding-left: 0.521vw;
+  padding-right: 0.521vw;
+  border-radius: 0.326vw;
+  font-size: 0.781vw;
+  bottom: -1.953vw;
+  left: -1.302vw;
+  opacity: 0;
+  transition: opacity 0.4s 0.4s;
+  pointer-events: none;
+  text-wrap: nowrap;
+}
+
+.link-button:hover .tooltip {
+  opacity: 1;
+}
+
+.footer {
+  font-size: 1.042vw;
+  bottom: 0;
+  width: 100%;
+  position: fixed;
   text-align: center;
-  text-decoration: none;
-  margin: 0 10px 0 10px;
-  color: #f2f2f2;
-  font-size: 17px;
+  color: #4d2c1d;
+  background-color: #ffb38e;
+  border-style: solid;
+  border-width: 0.065vw;
+  border-color: #4f4e4e;
+}
+
+@media (min-width: 0px) and (max-width: 600px) {
+  .footer {
+    font-size: 3vh;
+  }
+  .header {
+    display: flex;
+    flex-direction: column;
+    height: 14vh;
+    position: fixed;
+  }
+
+  .left-section {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    width: 100%;
+  }
+
+  .clock-container {
+    flex: 1;
+    font-size: 3.042vh;
+    width: 100%;
+  }
+
+  .left-section .clock-container {
+    display: flex;
+    margin-top: 2vh;
+    border-radius: 2.604vh;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .left-section .clock {
+    font-size: 4vh;
+    letter-spacing: 1vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .left-section .clock span {
+    padding: 0 1vh;
+  }
+
+  .left-section .clock span#hrs,
+  .left-section .clock span#min,
+  .left-section .clock span#sec {
+    text-align: center;
+  }
+
+  .middle-section {
+    width: 100%;
+  }
+
+  .title {
+    text-shadow: -0.065vh 0.065vh 0 #000, 0.065vh 0.065vh 0 #000,
+      0.065vh -0.065vh 0 #000, -0.065vh -0.065vh 0 #000;
+    font-size: 6vh;
+    margin: 0;
+  }
+
+  .right-section {
+    width: 95%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .button-icon {
+    height: 3.453vh;
+  }
+
+  .navbar {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .navbar p {
+    flex: 1;
+    font-size: 2.707vh;
+    padding: 0.5vh;
+  }
+
+  .link-button {
+    height: 5%;
+    width: 100%;
+    border-radius: 3.255vh;
+    position: relative;
+  }
+
+  .link-button:hover {
+    height: 2.604vh;
+    border-radius: 3.255vh;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 999px) {
+  .footer {
+    font-size: 3vh;
+  }
+  .header {
+    display: flex;
+    flex-direction: column;
+    height: 14vh;
+    position: fixed;
+  }
+
+  .left-section {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    width: 100%;
+  }
+
+  .clock-container {
+    flex: 1;
+    font-size: 3.042vh;
+    width: 100%;
+  }
+
+  .left-section .clock-container {
+    display: flex;
+    margin-top: 2vh;
+    border-radius: 2.604vh;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .left-section .clock {
+    font-size: 4vh;
+    letter-spacing: 1vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .left-section .clock span {
+    padding: 0 1vh;
+  }
+
+  .left-section .clock span#hrs,
+  .left-section .clock span#min,
+  .left-section .clock span#sec {
+    text-align: center;
+  }
+
+  .middle-section {
+    width: 100%;
+  }
+
+  .title {
+    text-shadow: -0.065vh 0.065vh 0 #000, 0.065vh 0.065vh 0 #000,
+      0.065vh -0.065vh 0 #000, -0.065vh -0.065vh 0 #000;
+    font-size: 6vh;
+    margin: 0;
+  }
+
+  .right-section {
+    width: 80%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .button-icon {
+    height: 3.453vh;
+  }
+
+  .navbar {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .navbar p {
+    flex: 1;
+    font-size: 2.707vh;
+    padding: 0.5vh;
+  }
+
+  .link-button {
+    height: 5%;
+    width: 100%;
+    border-radius: 3.255vh;
+    position: relative;
+  }
+
+  .link-button:hover {
+    height: 2.604vh;
+    border-radius: 3.255vh;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1300) {
 }

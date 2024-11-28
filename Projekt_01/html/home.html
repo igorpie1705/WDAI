@@ -7,16 +7,32 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/WDAI/Projekt_01/icons/paw.png"
+    />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kocie Brzuszki</title>
     <link rel="stylesheet" href="/WDAI/Projekt_01/styles/header.css" />
     <link rel="stylesheet" href="/WDAI/Projekt_01/styles/general.css" />
     <link rel="stylesheet" href="/WDAI/Projekt_01/styles/styles.css" />
+    <script defer src="/WDAI/Projekt_01/javascript/clock.js"></script>
   </head>
   <body>
     <header class="header">
-      <div class="left-section"></div>
+      <div class="left-section">
+        <div class="clock-container">
+          <div class="clock">
+            <span id="hrs">00</span>
+            <span>:</span>
+            <span id="min">00</span>
+            <span>:</span>
+            <span id="sec">00</span>
+          </div>
+        </div>
+      </div>
       <div class="middle-section">
         <p class="title">Kocie Brzuszki</p>
       </div>
@@ -25,40 +41,46 @@
           <a href="home.html">
             <button class="link-button">
               <img class="button-icon" src="/WDAI/Projekt_01/icons/pet.png" />
+              <div class="tooltip">Strona główna</div>
             </button>
           </a>
           <a href="galeria.html">
-            <button class="link-button highlighted">
+            <button class="link-button">
               <p>Nasze przysmaki</p>
+              <div class="tooltip">Sprawdź nasze produkty</div>
             </button>
           </a>
           <a href="kontakt.html">
-            <button class="link-button highlighted">
+            <button class="link-button">
               <p>Kontakt</p>
+              <div class="tooltip">Skontaktuj się z nami</div>
             </button>
           </a>
         </nav>
       </div>
     </header>
     <main>
-      <section class="text-container">
-        <div>
-          <p class="home-main-title">Nasi ulubieńcy</p>
+      <section class="main-ad">
+        <div class="text-container">
+          <p class="home-main-title">
+            Dla kocich brzuszków, które zasługują na to, co najlepsze!
+          </p>
           <p class="home-main-text">
-            W naszej ofercie odżywczych karm dla kotów znajdziesz coś dla
-            każdego kota i kociaka. Od pysznej suchej karmy po mokrą karmę w
-            różnych smakach: kurczak, łosoś, kaczka, indyk i nie tylko. W naszej
-            ofercie znajdziesz także karmę dostosowaną do specyficznych potrzeb
-            Twojego kota: od hipoalergicznej po dietetyczną. A jeśli chodzi o
-            marki? W naszej ofercie znajdziesz wszystkie Twoje ulubione karmy
-            (Royal Canin, Hill's, Purina Pro Plan i James Wellbeloved) oraz
-            mniejsze, niezależne marki, które uwielbiają nasi koci rodzice.
+            Wiesz, jak ważne jest zdrowie Twojego kota – my też! Dlatego
+            oferujemy szeroki wybór karm dostosowanych do każdej potrzeby. Od
+            chrupiących kąsków z kurczakiem, przez soczyste kawałki łososia, po
+            hipoalergiczne formuły dla wrażliwych brzuszków. Nasza oferta
+            obejmuje zarówno znane marki, jak i mniejsze, lokalne przysmaki,
+            które Twoje koty pokochają. Spraw, aby każdy posiłek Twojego pupila
+            był wyjątkowy!
           </p>
         </div>
-        <img
-          class="home-main-img"
-          src="/WDAI/Projekt_01/images/jedzace-koty.png"
-        />
+        <div class="home-image-container">
+          <img
+            class="home-main-img"
+            src="/WDAI/Projekt_01/images/catandbowl.jpg"
+          />
+        </div>
       </section>
       <section class="advertisement">
         <div class="advertisement-title">
@@ -74,7 +96,7 @@
               Nasza karma powstaje wyłącznie z najlepszych naturalnych
               składników – bez sztucznych dodatków, konserwantów ani barwników.
               Dbamy o to, aby każdy kęs był pełen wartości odżywczych, których
-              Twój kot potrzebuje każdego dnia
+              Twój kot potrzebuje każdego dnia.
             </p>
           </div>
           <div class="advertisement-panel">
@@ -96,8 +118,8 @@
             </p>
           </div>
         </div>
-        <a href="/WDAI/Projekt_01/html/galeria.html">
-          <button class="advertisement-button animated-button">
+        <a class="button-link" href="/WDAI/Projekt_01/html/galeria.html">
+          <button class="advertisement-button">
             Zadbaj o zdrowie swojego kota już dziś!
           </button>
         </a>

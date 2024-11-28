@@ -6,8 +6,25 @@ body {
   background-size: 85%;
   color: #de8f5f;
   margin: 0;
-  padding-top: 60px;
-  padding-bottom: 20px;
+  padding-top: 3.906vw;
+  padding-bottom: 1.302vw;
   font-family: Roboto, Arial, Helvetica, sans-serif;
   scroll-behavior: smooth;
+}
+
+@media (min-width: 0px) and (max-width: 600px) {
+  body {
+    padding-top: 13vh;
+    padding-bottom: 6vh;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 999px) {
+  body {
+    padding-top: 13vh;
+    padding-bottom: 6vh;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1300) {
 }

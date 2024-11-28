@@ -3,15 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Galeria</title>
+    <title>Kontakt</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/WDAI/Projekt_01/icons/paw.png"
+    />
     <link rel="stylesheet" href="/WDAI/Projekt_01/styles/header.css" />
     <link rel="stylesheet" href="/WDAI/Projekt_01/styles/general.css" />
     <link rel="stylesheet" href="/WDAI/Projekt_01/styles/form.css" />
     <link rel="stylesheet" href="/WDAI/Projekt_01/styles/styles.css" />
+    <script defer src="/WDAI/Projekt_01/javascript/validation.js"></script>
+    <script defer src="/WDAI/Projekt_01/javascript/clock.js"></script>
   </head>
   <body>
     <header class="header">
-      <div class="left-section"></div>
+      <div class="left-section">
+        <div class="clock-container">
+          <div class="clock">
+            <span id="hrs">00</span>
+            <span>:</span>
+            <span id="min">00</span>
+            <span>:</span>
+            <span id="sec">00</span>
+          </div>
+        </div>
+      </div>
       <div class="middle-section">
         <p class="title">Kocie Brzuszki</p>
       </div>
@@ -20,42 +37,50 @@
           <a href="home.html">
             <button class="link-button">
               <img class="button-icon" src="/WDAI/Projekt_01/icons/pet.png" />
+              <div class="tooltip">Strona główna</div>
             </button>
           </a>
           <a href="galeria.html">
             <button class="link-button">
               <p>Nasze przysmaki</p>
+              <div class="tooltip">Sprawdź nasze produkty</div>
             </button>
           </a>
           <a href="kontakt.html">
             <button class="link-button">
               <p>Kontakt</p>
+              <div class="tooltip">Skontaktuj się z nami</div>
             </button>
           </a>
         </nav>
       </div>
     </header>
-    <section class="layout">
+    <section class="container">
       <div class="contact-form">
-        <h2>Skontaktuj się z nami!</h2>
-        <form action="#" method="post">
+        <p class="form-title">Skontaktuj się z nami!</p>
+        <form class="form" id="form" action="#" method="post">
           <label for="email">Adres e-mail:</label>
           <input
+            class="text-placeholder"
             type="text"
             id="email"
             name="email"
             placeholder="Wprowadź swój e-mail"
             required
           />
-          <label for="subject">Temat wiadomości:</label>
-          <select id="subject" name="subject" required>
-            <option value="">Wybierz temat</option>
-            <option value="wsparcie">Wsparcie</option>
-            <option value="sprzedaż">Sprzedaż</option>
-            <option value="ogólne">Ogólne zapytanie</option>
-          </select>
+          <div class="error-email" id="error" style="display: none"></div>
+          <div class="second-box">
+            <label for="subject">Temat wiadomości:</label>
+            <select class="options" id="subject" name="subject" required>
+              <option value="">Wybierz temat</option>
+              <option value="wsparcie">Wsparcie</option>
+              <option value="sprzedaż">Sprzedaż</option>
+              <option value="ogólne">Ogólne zapytanie</option>
+            </select>
+          </div>
           <label for="message">Wiadomość:</label>
           <textarea
+            class="text-placeholder"
             id="message"
             name="message"
             placeholder="Wprowadź swoją wiadomość"

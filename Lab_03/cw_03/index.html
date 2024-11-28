@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API Data Table</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      .controls {
+        margin-bottom: 20px;
+      }
+      input,
+      select {
+        padding: 8px;
+        margin-right: 10px;
+        font-size: 16px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid #ddd;
+      }
+      th,
+      td {
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background-color: #f4f4f4;
+      }
+      img {
+        max-width: 100px;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Product Table</h1>
+    <div class="controls">
+      <input
+        type="text"
+        id="filterInput"
+        placeholder="Filter by title or description..."
+      />
+      <select id="sortSelect">
+        <option value="original">Original Order</option>
+        <option value="asc">Sort by Title (A-Z)</option>
+        <option value="desc">Sort by Title (Z-A)</option>
+      </select>
+    </div>
+    <table id="productTable">
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>Title</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- tu beda ladowane dane -->
+      </tbody>
+    </table>
+
+    <script>
+      async function fetchAndDisplayProducts() {
+        const response = await fetch("https://dummyjson.com/products");
+        const data = await response.json();
+        const products = data.products.slice(0, 30);
+
+        const tableBody = document.querySelector("#productTable tbody");
+        tableBody.innerHTML = "";
+
+        products.forEach((product) => {
+          const row = document.createElement("tr");
+
+          const imgCell = document.createElement("td");
+          const img = document.createElement("img");
+          img.src = product.thumbnail;
+          img.alt = product.title;
+          imgCell.appendChild(img);
+
+          const titleCell = document.createElement("td");
+          titleCell.textContent = product.title;
+
+          const descriptionCell = document.createElement("td");
+          descriptionCell.textContent = product.description;
+
+          row.appendChild(imgCell);
+          row.appendChild(titleCell);
+          row.appendChild(descriptionCell);
+
+          tableBody.appendChild(row);
+        });
+      }
+      fetchAndDisplayProducts();
+    </script>
+  </body>
+</html>
