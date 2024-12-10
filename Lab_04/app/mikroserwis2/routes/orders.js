@@ -1,9 +1,10 @@
 const express = require("express");
 const orderService = require("../services/orderService");
+const { authenticateToken } = require("../../middleware/authMiddleware");
 
 const router = express.Router();
 
-// Pobranie zamówienia po userID
+// Pobranie zamówień użytkownika
 router.get("/api/orders/:userId", async (req, res) => {
   const userId = req.params.userId;
   try {
@@ -19,8 +20,8 @@ router.get("/api/orders/:userId", async (req, res) => {
   }
 });
 
-// Dodanie nowego zamówienia
-router.post("/api/orders", async (req, res) => {
+// Dodanie nowego zamówienia (zabezpieczony tokenem JWT)
+router.post("/api/orders", authenticateToken, async (req, res) => {
   const { userId, bookId, quantity } = req.body;
 
   if (!userId || !bookId || !quantity) {
@@ -34,21 +35,20 @@ router.post("/api/orders", async (req, res) => {
   }
 });
 
-// Usuwanie zamówienia
-router.delete("/api/orders/:orderId", async (req, res) => {
+// Usunięcie zamówienia (zabezpieczony tokenem JWT)
+router.delete("/api/orders/:orderId", authenticateToken, async (req, res) => {
   const orderId = req.params.orderId;
-  const updateData = req.body;
 
   try {
-    const updatedOrder = await orderService.deleteOrder(orderId, updateData);
+    await orderService.deleteOrder(orderId);
     res.status(200).send("Pomyślnie usunięto zamówienie.");
   } catch (error) {
     res.status(500).send("Błąd podczas usuwania zamówienia.");
   }
 });
 
-// Aktualizacja zamówienia
-router.patch("/api/orders/:orderId", async (req, res) => {
+// Aktualizacja zamówienia (zabezpieczony tokenem JWT)
+router.patch("/api/orders/:orderId", authenticateToken, async (req, res) => {
   const orderId = req.params.orderId;
   const updateData = req.body;
 

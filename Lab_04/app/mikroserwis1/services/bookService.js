@@ -4,8 +4,8 @@ const getAllBooks = async () => {
   return await Book.findAll();
 };
 
-const getBookByID = async (id) => {
-  return await Book.findByPk(id);
+const getBookById = async (bookId) => {
+  return await Book.findByPk(bookId);
 };
 
 const addBook = async (bookData) => {
@@ -16,13 +16,14 @@ const addBooksInBulk = async (books) => {
   return await Book.bulkCreate(books);
 };
 
-const deleteBook = async (id) => {
-  return await Book.destroy({ where: { id } });
+const deleteBook = async (bookId) => {
+  const rowsDeleted = await Book.destroy({ where: { id: bookId } });
+  return rowsDeleted > 0;
 };
 
 module.exports = {
   getAllBooks,
-  getBookByID,
+  getBookById,
   addBook,
   addBooksInBulk,
   deleteBook,
