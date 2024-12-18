@@ -97,7 +97,7 @@ class Zombie {
     this.frameX = 0;
     this.frameY = 0;
     this.radius = Math.random() * 60 + 25;
-    this.speed = Math.random() * 3 + 1;
+    this.speed = Math.random() * 4 + 1;
     this.distance;
     this.hitboxYOffset = -this.radius * 0.5;
     this.hitboxXOffest = this.radius * 0.2;
@@ -149,7 +149,7 @@ class Zombie {
 
 function handleZombies() {
   let hitZombie = false;
-  if (gameFrame % 100 == 0) {
+  if (gameFrame % 80 == 0) {
     zombiesArray.push(new Zombie());
   }
   for (let i = zombiesArray.length - 1; i >= 0; i--) {
