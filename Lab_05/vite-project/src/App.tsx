@@ -1,15 +1,11 @@
 import "./App.css";
-import Logowanie from "./components/formularze/Logowanie";
-import Aktualizacja from "./components/inne/Aktualizacja";
-import Licznik from "./components/liczniki/Licznik";
+import Komentarze from "./components/produkty/Komentarze";
 
 function App() {
   return (
     <div>
       <h1>Moja Aplikacja</h1>
-      <Logowanie />
-      <Licznik />
-      <Aktualizacja />
+      <Komentarze />
     </div>
   );
 }
