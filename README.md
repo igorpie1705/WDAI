@@ -1,2 +1,1 @@
-# WDAI
-Kurs Wstęp do aplikacji internetowych
+Introduction to Web Development Technologies course
